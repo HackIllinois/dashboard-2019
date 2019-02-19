@@ -52,6 +52,47 @@ html, body {
         }
       }
     }
+    .bottom-row {
+      .events-wrapper {
+        box-sizing: border-box;
+        padding: 50px;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+
+        .events {
+          background-color: $box-bg-blue;
+          color: $yellow-text;
+          text-align: center;
+
+          h5 {
+            padding-top: 20px;
+            font-size: 14px;
+          }
+
+          .event {
+            background-color: #153F4B;
+            height: 70px;
+            font-size: 14px;
+            margin: 0 8px 6px 8px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            p {
+              margin-bottom: 0;
+              margin-left: 10px;
+            }
+
+            .location {
+              color: #40B3C3;
+              font-size: 11px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
