@@ -10,21 +10,31 @@
       background-color: $box-bg-blue;
       box-shadow: 0px 0px 8px rgba(0,0,0,0.2);
       color: $yellow-text;
+      display: flex;
+      flex-direction: column;
       height: 100%;
       text-align: center;
       width: 100%;
-      h5 {
-        padding-top: 20px;
+      > h5 {
         font-size: 1.2em;
+        margin-bottom: 0;
+        padding-top: 20px;
       }
 
-      .body-wrapper {
-        display: table;
-        .body {
-          display: table-cell;
-          vertical-align: middle;
-        }
+      .body {
+        flex-grow: 1;
       }
+    }
+  }
+
+  .long-cell {
+    box-sizing: border-box;
+    padding: 50px;
+    height: 100%;
+
+    .content {
+      max-height: 100%;
+      overflow: hidden;
     }
   }
 }

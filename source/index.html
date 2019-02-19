@@ -21,33 +21,33 @@
               <h5>COUNTDOWN</h5>
               <div class="countdown-timer body">
                 <div class="time-number days">
-                  <h3>00</h3>
-                  <h3>01</h3>
-                  <h3>02</h3>
+                  <h3 id="d-prev">00</h3>
+                  <h3 id="d-cur">01</h3>
+                  <h3 id="d-next">02</h3>
                 </div>
                 <div class="time-unit">
                   <h5>D</h5>
                 </div>
                 <div class="time-number days">
-                  <h3>00</h3>
-                  <h3>01</h3>
-                  <h3>02</h3>
+                  <h3 id="h-prev">00</h3>
+                  <h3 id="h-cur">01</h3>
+                  <h3 id="h-next">02</h3>
                 </div>
                 <div class="time-unit">
                   <h5>H</h5>
                 </div>
                 <div class="time-number days">
-                  <h3>00</h3>
-                  <h3>01</h3>
-                  <h3>02</h3>
+                  <h3 id="m-prev">00</h3>
+                  <h3 id="m-cur">01</h3>
+                  <h3 id="m-next">02</h3>
                 </div>
                 <div class="time-unit">
-                  <h5>M</h5>
+                  <h5 id="d-prev">M</h5>
                 </div>
                 <div class="time-number days">
-                  <h3>00</h3>
-                  <h3>01</h3>
-                  <h3>02</h3>
+                  <h3 id="s-prev">00</h3>
+                  <h3 id="s-cur">01</h3>
+                  <h3 id="s-next">02</h3>
                 </div>
                 <div class="time-unit">
                   <h5>S</h5>
@@ -58,11 +58,9 @@
           <div class="four columns cell short-cell">
             <div class="time content">
               <h5>CURRENT TIME</h5>
-              <div class="body-wrapper">
-                <div class="ts body">
-                  <div class="a"><h1 id="time">00:00</h1></div>
-                  <div class="b"><h3 id="meridian">AM</h3></div>
-                </div>
+              <div class="ts body">
+                <div class="a"><h1 id="time">00:00</h1></div>
+                <div class="b"><h3 id="meridian">AM</h3></div>
               </div>
             </div>
           </div>
@@ -85,8 +83,13 @@
               </div>
             </div>
           </div>
-          <div class="four columns cell">
-            <h1>frank</h1>
+          <div class="four columns cell long-cell">
+            <div class="content">
+              <a class="twitter-timeline" href="https://twitter.com/HackIllinois?ref_src=twsrc%5Etfw">
+                Tweets by HackIllinois
+              </a>
+              <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
           </div>
           <div class="four columns cell">
             <div class="events-wrapper">

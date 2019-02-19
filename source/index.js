@@ -1,14 +1,16 @@
 import $ from 'jquery';
 
+import { startCountdown } from './cells/countdown';
+import { startTime } from './cells/time';
+
 import './styles/reset.css';
 import './styles/normalize.css';
 import './styles/skeleton.css';
 import './styles/dashboard.scss';
 
 $(document).ready(() => {
-  const x = 33 * 20;
-  console.log('doc ready');
-  console.log(`x is ${x}`);
+  startCountdown();
+  startTime();
 
   // Events
   $.get('/api/event/', ({ events }) => {
