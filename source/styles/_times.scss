@@ -1,0 +1,28 @@
+@import './variables.scss';
+
+.countdown-timer {
+  display: table;
+  margin: auto;
+
+  .time-number {
+    display: table-cell;
+    vertical-align: middle;
+
+    &:first-child { padding-left: 10px; }
+
+    h3 {
+      font-size: 3.6rem;
+      margin: 0;
+    }
+    h3:first-child, h3:last-child {
+      color: $text-greyed;
+      font-size: 2rem;
+    }
+  }
+  .time-unit {
+    color: #40B3C3;
+    display: table-cell;
+    padding: 0 10px;
+    vertical-align: middle;
+  }
+}
