@@ -23,3 +23,65 @@
     }
   }
 }
+
+@media (min-width: 1700px) {
+  .row {
+    .cell .content {
+      & > h5 {
+        font-size: 2em;
+        padding-top: 30px;
+      }
+
+      .countdown-timer {
+        .time-number {
+          width: 70px;
+          h3 {
+            font-size: 4.4rem;
+            &:first-child, &:last-child {
+              font-size: 2.6rem;
+            }
+          }
+        }
+        .time-unit {
+          padding: 0 8px;
+          h5 { font-size: 24px; }
+        }
+      }
+
+      &.time h1#time {
+        font-size: 8.0rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 2180px) {
+  .row {
+    .cell .content {
+      & > h5 {
+        font-size: 2em;
+        padding-top: 40px;
+      }
+
+      .countdown-timer {
+        .time-number {
+          width: 95px;
+          h3 {
+            font-size: 6.0rem;
+            &:first-child, &:last-child {
+              font-size: 3.4rem;
+            }
+          }
+        }
+        .time-unit {
+          padding: 0 12px;
+          h5 { font-size: 36px; }
+        }
+      }
+
+      &.time h1#time {
+        font-size: 12.0rem;
+      }
+    }
+  }  
+}
