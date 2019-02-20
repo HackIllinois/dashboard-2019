@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 import { startCountdown } from './cells/countdown';
+import { init as initSponsors, start as startSponsors } from './cells/sponsors';
 import { startTime } from './cells/time';
 
 import './styles/reset.css';
@@ -11,6 +12,8 @@ import './styles/dashboard.scss';
 $(document).ready(() => {
   startCountdown();
   startTime();
+  initSponsors();
+  setTimeout(startSponsors, 1000);
 
   // Events
   $.get('/api/event/', ({ events }) => {

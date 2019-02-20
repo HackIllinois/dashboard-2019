@@ -2,11 +2,6 @@
   .cell {
     height: 100%;
     padding: 40px;
-  }
-
-  .short-cell {
-    box-sizing: border-box;
-    height: 100%;
 
     .content {
       background-color: $box-bg-blue;
@@ -27,6 +22,11 @@
         flex-grow: 1;
       }
     }
+  }
+
+  .short-cell {
+    box-sizing: border-box;
+    height: 100%;
   }
 
   .long-cell {
