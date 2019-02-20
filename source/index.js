@@ -14,9 +14,17 @@ $(document).ready(() => {
   startTime();
   initSponsors();
   setTimeout(startSponsors, 1000);
+  fetchData();
+  setInterval(fetchData, 10000);
+});
 
+const fetchData = () => {
   // Events
   $.get('/api/event/', ({ events }) => {
+    // Remove existing events from DOM
+    $('#cur-events-cont').empty();
+    $('#upcoming-events-cont').empty();
+
     const time = new Date().getTime();
 
     // Sort events chronologically
@@ -28,14 +36,14 @@ $(document).ready(() => {
     events.forEach((event) => {
       if (event.startTime <= time && event.endTime > time) {
         cur.push(event);
-      } else if (event.startTime > time) {
+      } else if (event.startTime > time && upcoming.length < 4) {
         upcoming.push(event);
       }
     });
 
     // Add events to dom
     cur.forEach((event) => {
-      const loc = event.locationDescription;
+      const loc = event.locations[0].description;
       $('#cur-events-cont').append(`
         <div class="event">
           <p class="name">${event.name}</p>
@@ -44,7 +52,7 @@ $(document).ready(() => {
       `);
     });
     upcoming.forEach((event) => {
-      const loc = event.locationDescription;
+      const loc = event.locations[0].description;
       $('#upcoming-events-cont').append(`
         <div class="event">
           <p class="name">${event.name}</p>
@@ -54,13 +62,14 @@ $(document).ready(() => {
     });
   });
 
-  $.get('/api/notifications/all', ({ notifications }) => {
-    notifications.forEach((el) => {
+  $.get('/api/notifications/public/', ({ notifications }) => {
+    if (notifications[0]) {
+      $('#announcements-cont').empty();
       $('#announcements-cont').append(`
-        <div class="event">
-          <p class="name">${notification.title}</p>
+        <div class="announcement">
+          <p class="name">${notifications[0].title}</p>
         </div>
       `);
-    });
+    }
   });
-});
+};
