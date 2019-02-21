@@ -40,6 +40,9 @@ const shuffle = () => {
 
 export const init = () => {
   shuffle();
+  for (let i = 0; i < 9; i++) {
+    $(`#sponsor-${order[i]}`).attr('src', sponsors[sponsors.length - i - 1]);
+  }
 }
 
 const ANIMATION_DURATION = 840;

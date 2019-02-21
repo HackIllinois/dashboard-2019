@@ -13,7 +13,7 @@ $(document).ready(() => {
   startCountdown();
   startTime();
   initSponsors();
-  setTimeout(startSponsors, 1000);
+  startSponsors();
 
   // Events
   $.get('/api/event/', ({ events }) => {
