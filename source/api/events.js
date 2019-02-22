@@ -56,7 +56,9 @@ const fetchData = () => {
   });
 
   $.get({ url: notificationsRoute, crossDomain: true }, ({ notifications }) => {
-    if (notifications && notifications[0]) {
+    if (notifications === null || notifications === undefined) { return; }
+
+    if (notifications[0]) {
       $('#announcements-cont').empty();
       $('#announcements-cont').append(`
         <div class="announcement">
