@@ -3,6 +3,38 @@ import $ from 'jquery';
 const eventsRoute = `${process.env.API_ENDPOINT}/event/`;
 const notificationsRoute = `${process.env.API_ENDPOINT}/notifications/public/`;
 
+const days = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+
+function formatTime(d) {
+  const hh = d.getHours();
+  let m = d.getMinutes();
+  let dd = "AM";
+  let h = hh;
+  if (h >= 12) {
+    h = hh - 12;
+    dd = "PM";
+  }
+  if (h == 0) {
+    h = 12;
+  }
+  m = m < 10 ? "0" + m : m;
+
+  return `${h}:${m} ${dd}`
+}
+
+const formatDate = (time) => {
+  const td = new Date(time);
+  return `${days[td.getDay()]} ${formatTime(td)}`
+};
+
 const fetchData = () => {
   // Events
   $.get({ url: eventsRoute, crossDomain: true }, ({ events }) => {
@@ -50,7 +82,7 @@ const fetchData = () => {
       $('#upcoming-events-cont').append(`
         <div class="event">
           <p class="name">${event.name}</p>
-          <p class="location">${loc}</p>
+          <p class="location">${loc} | ${formatDate(event.startTime * 1000)}</p>
         </div>
       `);
     });
