@@ -1,5 +1,28 @@
 @import './variables.scss';
 
+.time {
+  .ts {
+    display: table;
+    margin: auto;
+
+    h1, h3 {
+      margin: 0;
+    }
+
+    .a, .b {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    .b {
+        color: $light-blue-text;
+        h3 {
+          font-size: 1.4em;
+          margin-left: 20px;
+        }
+    }
+  }
+}
+
 .content {
   .countdown-timer {
     align-items: center;

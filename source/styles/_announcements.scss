@@ -1,5 +1,7 @@
-.announcements {
-  box-sizing: border-box;
-  height: 50%;
-  padding-bottom: 40px;
+.bottom-row > .vsplit {
+  & > .announcements {
+    box-sizing: border-box;
+    height: 50%;
+    padding-bottom: 40px;
+  }
 }
