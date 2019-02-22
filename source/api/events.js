@@ -92,7 +92,7 @@ const fetchData = () => {
     if (notifications === null || notifications === undefined) { return; }
 
     notifications.sort((a, b) => b.time - a.time);
-    notifications = notifications.slice(0, 2);
+    notifications = notifications.slice(0, 3);
     $('#announcements-cont').empty();
     notifications.forEach(notification => {
       const { title, body } = notification;

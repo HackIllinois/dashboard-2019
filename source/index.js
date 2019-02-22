@@ -21,6 +21,4 @@ $(document).ready(() => {
   setTimeout(startSponsors, 1000);
   fetchData();
   setInterval(fetchData, 10000);
-
-  setInterval(reload, 60000);
 });
