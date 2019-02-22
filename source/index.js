@@ -10,6 +10,10 @@ import './styles/normalize.css';
 import './styles/skeleton.css';
 import './styles/dashboard.scss';
 
+const reload = () => {
+  window.location.reload(true);
+}
+
 $(document).ready(() => {
   startCountdown();
   startTime();
@@ -17,4 +21,6 @@ $(document).ready(() => {
   setTimeout(startSponsors, 1000);
   fetchData();
   setInterval(fetchData, 10000);
+
+  setInterval(reload, 60000);
 });
