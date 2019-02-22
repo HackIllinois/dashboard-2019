@@ -22,7 +22,7 @@ const fetchData = () => {
     events.forEach((event) => {
       if (event.startTime <= time && event.endTime > time) {
         cur.push(event);
-      } else if (event.startTime > time) {
+      } else if (event.startTime > time && upcoming.length < 11) {
         upcoming.push(event);
       }
     });
@@ -58,15 +58,14 @@ const fetchData = () => {
 
   $.get({ url: notificationsRoute, crossDomain: true }, ({ notifications }) => {
     if (notifications === null || notifications === undefined) { return; }
-
-    if (notifications[0]) {
-      $('#announcements-cont').empty();
+    $('#announcements-cont').empty();
+    notifications.forEach(notification => {
       $('#announcements-cont').append(`
         <div class="announcement">
-          <p class="name">${notifications[0].title}</p>
+          <p class="name">${notification.title}</p>
         </div>
       `);
-    }
+    });
   });
 };
 
