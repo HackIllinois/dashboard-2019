@@ -12,6 +12,7 @@ const fetchData = () => {
 
     const time = new Date().getTime();
 
+    if (events === null) { return; }
     // Sort events chronologically
     events.sort((a, b) => a.startTime - b.startTime);
 
@@ -56,6 +57,7 @@ const fetchData = () => {
   });
 
   $.get({ url: notificationsRoute, crossDomain: true }, ({ notifications }) => {
+    console.log(notifications);
     if (notifications === null || notifications === undefined) { return; }
 
     if (notifications[0]) {
