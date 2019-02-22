@@ -52,6 +52,13 @@
         font-size: 8.0rem;
       }
     }
+
+    .sponsor-grid {
+      grid-gap: 30px;
+      .sponsor-wrapper {
+        padding: 18px;
+      }
+    }
   }
 }
 

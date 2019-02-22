@@ -1,4 +1,5 @@
-const to = new Date('2019-02-22T20:00:00-0600');
+const hackStart = new Date('2019-02-22T23:00:00-0600');
+const hackEnd = new Date('2019-02-24T11:00:00-0600');
 
 const adjust = (t) => t < 10 ? '0' + t : t;
 
@@ -21,7 +22,11 @@ const setTime = (d, h, m, s) => {
 
 const tick = () => {
   const now = new Date();
-  let delta = (to - now) / 1000;
+  let delta = (hackStart - now) / 1000;
+
+  if (delta < 0) {
+    delta = (hackEnd - now) / 1000;
+  }
 
   if (delta < 0) {
     setTime(0,0,0,0);

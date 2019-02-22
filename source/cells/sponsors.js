@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 import Amadeus from '../assets/Sponsors/Amadeus.png';
+import BP from '../assets/Sponsors/BP.png';
 import C1 from '../assets/Sponsors/C1.png';
 import Caterpillar from '../assets/Sponsors/Caterpillar.png';
 import Citadel from '../assets/Sponsors/Citadel.png';
@@ -22,7 +23,7 @@ import TwoSigma from '../assets/Sponsors/TwoSigma.png';
 import Zeit from '../assets/Sponsors/Zeit.svg';
 
 let sponsors = [
-  Amadeus, C1, Caterpillar, Citadel, Facebook, Fulcrum, Google, IMC, Jackson, Mirus,
+  Amadeus, BP, C1, Caterpillar, Citadel, Facebook, Fulcrum, Google, IMC, Jackson, Mirus,
   Mozilla, NPM, Nvisia, Optum, Particle, RC, Schlum, SNL, TwoSigma, Zeit,
 ];
 const order = [6, 2, 4, 1, 7, 8, 5, 0, 3]
@@ -40,6 +41,9 @@ const shuffle = () => {
 
 export const init = () => {
   shuffle();
+  for (let i = 0; i < 9; i++) {
+    $(`#sponsor-${order[i]}`).attr('src', sponsors[sponsors.length - i - 1]);
+  }
 }
 
 const ANIMATION_DURATION = 840;
