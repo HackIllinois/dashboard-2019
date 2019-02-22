@@ -5,7 +5,7 @@ const notificationsRoute = `${process.env.API_ENDPOINT}/notifications/public/`;
 
 const fetchData = () => {
   // Events
-  $.get(eventsRoute, ({ events }) => {
+  $.get({ url: eventsRoute, crossDomain: true }, ({ events }) => {
     // Remove existing events from DOM
     $('#cur-events-cont').empty();
     $('#upcoming-events-cont').empty();
@@ -47,7 +47,7 @@ const fetchData = () => {
     });
   });
 
-  $.get(notificationsRoute, ({ notifications }) => {
+  $.get({ url: notificationsRoute, crossDomain: true }, ({ notifications }) => {
     if (notifications[0]) {
       $('#announcements-cont').empty();
       $('#announcements-cont').append(`
