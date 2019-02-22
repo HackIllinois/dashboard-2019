@@ -57,7 +57,6 @@ const fetchData = () => {
   });
 
   $.get({ url: notificationsRoute, crossDomain: true }, ({ notifications }) => {
-    console.log(notifications);
     if (notifications === null || notifications === undefined) { return; }
 
     if (notifications[0]) {
