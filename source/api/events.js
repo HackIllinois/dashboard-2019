@@ -28,6 +28,10 @@ const fetchData = () => {
 
     // Add events to dom
     cur.forEach((event) => {
+      if (!event.locations || event.locations.length === 0) {
+        return;
+      }
+
       const loc = event.locations[0].description;
       $('#cur-events-cont').append(`
         <div class="event">
@@ -37,6 +41,10 @@ const fetchData = () => {
       `);
     });
     upcoming.forEach((event) => {
+      if (!event.locations || event.locations.length === 0) {
+        return;
+      }
+
       const loc = event.locations[0].description;
       $('#upcoming-events-cont').append(`
         <div class="event">
@@ -48,7 +56,7 @@ const fetchData = () => {
   });
 
   $.get({ url: notificationsRoute, crossDomain: true }, ({ notifications }) => {
-    if (notifications[0]) {
+    if (notifications && notifications[0]) {
       $('#announcements-cont').empty();
       $('#announcements-cont').append(`
         <div class="announcement">
