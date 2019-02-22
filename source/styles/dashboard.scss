@@ -59,7 +59,7 @@ html, body {
     .bottom-row {
       height: 66.66666%;
 
-      .events-wrapper {
+      .events-wrapper, .announcements {
         height: 100%;
         overflow: hidden;
 
@@ -67,7 +67,7 @@ html, body {
           margin-bottom: 6px;
         }
 
-        .event {
+        .event, .announcement {
           background-color: #153F4B;
           font-size: 14px;
           margin: 0 8px 6px 8px;

@@ -90,11 +90,16 @@ const fetchData = () => {
 
   $.get({ url: notificationsRoute, crossDomain: true }, ({ notifications }) => {
     if (notifications === null || notifications === undefined) { return; }
+
+    notifications.sort((a, b) => b.time - a.time);
+    notifications = notifications.slice(0, 2);
     $('#announcements-cont').empty();
     notifications.forEach(notification => {
+      const { title, body } = notification;
       $('#announcements-cont').append(`
-        <div class="announcement">
-          <p class="name">${notification.title}</p>
+        <div class="event">
+          <p class="name">${title}</p>
+          <p class="location">${body}</p>
         </div>
       `);
     });
