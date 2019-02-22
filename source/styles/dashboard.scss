@@ -60,6 +60,13 @@ html, body {
       height: 66.66666%;
 
       .events-wrapper {
+        height: 100%;
+        overflow: hidden;
+
+        h5 {
+          margin-bottom: 6px;
+        }
+
         .event {
           background-color: #153F4B;
           height: 70px;
@@ -69,7 +76,7 @@ html, body {
           display: flex;
           flex-direction: column;
           justify-content: center;
-          
+        
           p {
             margin-bottom: 0;
             margin-left: 10px;
@@ -85,6 +92,29 @@ html, body {
       .vsplit {
         display: flex;
         flex-direction: column;
+      }
+
+      .announcements {
+        overflow: hidden;
+
+        .announcement {
+          background-color: #153F4B;
+          height: 70px;
+          font-size: 14px;
+          margin: 0 8px 6px 8px;
+          text-align: left;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        
+          p {
+            margin-bottom: 0;
+            margin-left: 10px;
+          }
+        }
+        h5 {
+          margin-bottom: 6px;
+        }
       }
     }
   }

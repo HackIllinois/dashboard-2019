@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 
@@ -62,6 +63,9 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin([BUILD_DIR], { root: ROOT_DIR }),
+    new Dotenv({
+      systemvars: true,
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       favicon: path.resolve(PUBLIC_DIR, 'favicon.ico'),
