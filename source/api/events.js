@@ -10,7 +10,7 @@ const fetchData = () => {
     $('#cur-events-cont').empty();
     $('#upcoming-events-cont').empty();
 
-    const time = new Date().getTime();
+    const time = Math.floor(new Date().getTime() / 1000);
 
     if (events === null) { return; }
     // Sort events chronologically
@@ -22,7 +22,7 @@ const fetchData = () => {
     events.forEach((event) => {
       if (event.startTime <= time && event.endTime > time) {
         cur.push(event);
-      } else if (event.startTime > time && upcoming.length < 4) {
+      } else if (event.startTime > time) {
         upcoming.push(event);
       }
     });
